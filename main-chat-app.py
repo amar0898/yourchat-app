@@ -106,4 +106,4 @@ def on_leave(data):
 
 
 
-app.run(debug=True)
+app.run()
