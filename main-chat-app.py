@@ -9,15 +9,23 @@ from flask_socketio import SocketIO,send,join_room,leave_room
 
 
 app = Flask(__name__)
+
+app.secret_key =os.environ.get('SECRET')
+app.config['WTF_CSRF_SECRET_KEY'] = "b'~c\xa5K}\x98\xa2\xd73\xd0<\xbb<[\x01p'"
+
+
 app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
+
 login = LoginManager(app)
 login.init_app(app)
 
 
 
 
-app.secret_key = os.environ.get('SECRET')
+
 
 
 @login.user_loader
