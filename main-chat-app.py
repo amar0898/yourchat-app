@@ -1,17 +1,15 @@
-
+import os
 import time
 from flask import Flask, render_template,redirect,url_for,flash
 from flask_login import LoginManager, login_user,current_user,login_required,logout_user
 from wtform_fields import *
 from models import *
 from flask_socketio import SocketIO,send,join_room,leave_room
-import json
 
-with open('config.json', 'r') as c:
-    params = json.load(c)["params"]
+
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']=params['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 login = LoginManager(app)
 login.init_app(app)
@@ -19,7 +17,7 @@ login.init_app(app)
 
 
 
-app.secret_key = params['SECRET_KEY']
+app.secret_key = os.environ.get('SECRET')
 
 
 @login.user_loader
@@ -107,5 +105,5 @@ def on_leave(data):
 
 
 
-if __name__ == "__main":
-    app.run(debug=True)
+
+app.run(debug=True)
