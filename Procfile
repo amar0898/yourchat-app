@@ -1,1 +1,1 @@
-web:gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 main-chat-app:app
+web:gunicorn -k flask_sockets.worker main-chat-app:app
