@@ -1,0 +1,26 @@
+{% from 'form_helper.html' import displayField %}
+{% extends 'layout.html' %}
+
+{% block title %}Login {% endblock %}
+
+{% block content %}
+
+<h2>Login Now !</h2>
+<p>Enter your username and password to start WeChat</p>
+<form action="{{url_for('login')}}", method="POST">
+	
+ {{ displayField(form.username, 'Username', autocomplete="off", autofocus=true)}}
+    {{ displayField(form.password, 'Password')}}
+    
+
+
+	<div class="form-group">
+		<input type="submit" value="Login" class="btn btn-warning">
+	</div>
+
+	{{ form.csrf_token }}
+
+</form>
+<hr>
+<p>Have not registered? <a href={{url_for('index')}}>Register here</a>.</p>
+{% endblock %}
