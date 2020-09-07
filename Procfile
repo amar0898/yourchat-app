@@ -1,1 +1,1 @@
-gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 main-chat-app:app
+web:gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 main-chat:app
