@@ -110,8 +110,5 @@ def on_leave(data):
 
 
 
-
-
-
-
-app.run()
+if __name__ == "__main__":
+    socketio.run(app,debug=True)
