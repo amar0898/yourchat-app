@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	 var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
 
+    const username = document.querySelector('#get-username').innerHTML;
+
      let room="Movies";
      joinRoom("Movies");
 
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	 	const span_timestamp = document.createElement('span');
 	 	const br=document.createElement('br');
 
-	 	if(data.user_message == user_message){
+	 	if(data.username == username){
 	 		p.setAttribute("class", "my-msg");
 
 	 		span_username.setAttribute("class", "my-username");
