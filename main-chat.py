@@ -14,7 +14,7 @@ app.secret_key ='amar'
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI']='postgres://jlrgcykuytbvms:e2d5f08001fdd255e15e262b17a1b1f4ea5263ac89e18c23afb46532267c548c@ec2-52-7-15-198.compute-1.amazonaws.com:5432/ddhhda0ru61an6'
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
