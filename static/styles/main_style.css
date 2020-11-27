@@ -1,6 +1,9 @@
 h1 {
     color: #206ED2;
 }
+.display-4{
+    text-align: center;
+}
 
 #main-section {
     overflow: hidden; /* Makee this div contain its floated children */
@@ -41,6 +44,7 @@ img {
 #righthand-side {
     padding: 0 3em 0 0;
     overflow: hidden; /* Make this div take up the rest of the horizontal space, and no more */
+    margin-left: 100px;
 }
 
 h2 {
@@ -50,6 +54,9 @@ h2 {
 #righthand-side p {
     font-size: 0.8em;
     color: grey;
+}
+.lead{
+    text-align: center;
 }
 
 @media (max-width: 588px) {
