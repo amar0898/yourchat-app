@@ -19,11 +19,7 @@
              <p class="lead">Chat rooms are back! </p>
       </div>
 
-      <div id="image-section">
-            <picture>
-                    <img class="card" src="{{ url_for('static', filename='images/demo.gif') }}" border="5px">
-            </picture>
-      </div>
+      
 
       <div id="righthand-side">
         {% with messages = get_flashed_messages(with_categories=true) %}
