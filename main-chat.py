@@ -10,12 +10,12 @@ from flask_socketio import SocketIO,send,join_room,leave_room
 
 app = Flask(__name__)
 
-app.secret_key ='amar'
+app.secret_key = os.environ.get('SECRET_KEY')
 
 
 
 app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS')
 
 db = SQLAlchemy(app)
 
